@@ -2,9 +2,8 @@ html{
     background-color: yellow;
     text-align: center;
 }
-#main_site{
+body{
     background-color: springgreen;
-    margin: 1%;
     padding: 0.1%;
     width: 98%;
     height: 98%;
@@ -36,8 +35,12 @@ h1{
 #list{
     margin: auto;
     height: 50%;
-    width: 45%;
+    width: 35%;
     background-color: violet;
+}
+ul{
+    padding: 1%;
+    margin: 0%;
 }
 #quantity{
     width: 20%;
@@ -53,6 +56,7 @@ button{
     float: right;
 }
 footer{
-    position: static;
-    margin:auto;
+    padding: 1%;
+    background-color: brown;
+    margin-top: calc(16px + 1%);
 }
