@@ -9,19 +9,34 @@ body{
     height: 98%;
 }
 
-#menu{
-    background-color: blue;
-}
-
 h1{
     background-color: red;
     margin: auto;
     padding: 1%;
 }
+#left-buttons{
+    float: left;
+    height: 40%;
+    width: 33.33%;
+    display: inline-block;
+    background-color: lightcoral;
+}
+#center-buttons{
+    height: 40%;
+    width: 33.33%;
+    display: inline-block;
+    background-color: lightskyblue;
+}
+#right-buttons{
+    float:right;
+    height: 40%;
+    width: 33.33%;
+    display: inline-block;
+    background-color: mediumvioletred;
+}
 
 #after_divs{
     background-color: blueviolet;
-    margin: auto;
 }
 
 #config_menu{
@@ -31,6 +46,7 @@ h1{
     padding: 1.5%;
     width: 29%;
     height: 35%;
+    display: none; /*hidden|button config with listener*/
 }
 #list{
     margin: auto;
@@ -55,8 +71,16 @@ button{
 #download{
     float: right;
 }
+#delete{
+    float:right;
+}
+.all{
+    float:left;
+    margin: 2.5%;
+    margin-left: 1%;
+    margin-bottom: 0px;
+}
 footer{
     padding: 1%;
     background-color: brown;
-    margin-top: calc(16px + 1%);
 }
