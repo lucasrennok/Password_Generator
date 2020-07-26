@@ -5,12 +5,11 @@ html{
 #main_site{
     background-color: springgreen;
     margin: 0px;
+    margin-top: 0px;
 }
 
 #menu{
     background-color: blue;
-    margin: 20px;
-    margin-bottom: 0px;
 }
 
 #title{
@@ -29,12 +28,14 @@ html{
     float:left;
     text-align: left;
     background-color: green;
-    padding: 15px;
+    padding: 10px;
     width: 300px;
     height: 200px;
-    margin: 20px;
-    margin-top: 0px;
+    position: absolute;
+	left: 0.5%;
+	top: 19.2%
 }
+
 #list{
     margin: auto;
     height: 450px;
