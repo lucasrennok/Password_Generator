@@ -22,6 +22,7 @@ html{
 }
 
 #after_divs{
+    background-color: blueviolet;
     margin: auto;
 }
 
