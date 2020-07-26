@@ -1,0 +1,20 @@
+html{
+    background-color: yellow;
+}
+
+/*menu*/
+#menu{
+    background-color: blue;
+}
+
+#title{
+    background-color: red;
+}
+
+#config_menu{
+    background-color: green;
+}
+
+#list{
+    background-color: violet;
+}
