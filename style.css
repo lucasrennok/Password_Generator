@@ -1,20 +1,60 @@
 html{
     background-color: yellow;
+    text-align: center;
 }
 
-/*menu*/
 #menu{
     background-color: blue;
+    margin: 20px;
+    margin-bottom: 0px;
 }
 
 #title{
     background-color: red;
 }
-
-#config_menu{
-    background-color: green;
+#title h1{
+    margin: auto;
+    padding: 20px;
 }
 
+#after_divs{
+    margin: auto;
+}
+
+#config_menu{
+    float:left;
+    text-align: left;
+    background-color: green;
+    padding: 15px;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    margin-top: 0px;
+}
 #list{
+    margin: auto;
+    height: 450px;
+    width: 600px;
     background-color: violet;
+}
+
+button{
+    padding: 10px;
+    margin: 10px;
+}
+#config{
+    float: left;
+}
+#more{
+    margin-left: 70px;
+    margin-right: 20px;
+}
+#delete{
+    margin-left: 20px;
+}
+#download{
+    float: right;
+}
+#config_menu input{
+    margin: 12px;
 }
