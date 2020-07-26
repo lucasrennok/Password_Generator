@@ -2,6 +2,10 @@ html{
     background-color: yellow;
     text-align: center;
 }
+#main_site{
+    background-color: springgreen;
+    margin: 0px;
+}
 
 #menu{
     background-color: blue;
