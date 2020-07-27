@@ -67,9 +67,6 @@ function deleteClicked(){
         list_of_pass.pop();
     }
 }
-function downloadClicked(){
-    console.log(list_of_pass);
-}
 
 function create_password(){
     let quant = parseInt(document.getElementById("quantity").value,10);
@@ -170,4 +167,21 @@ function create_password(){
     }else{
         return "■";
     }
+}
+
+function downloadClicked(){
+    var arq = document.getElementById("download_t");
+    let res = "";
+    for(let pass of list_of_pass){
+        if(pass!="")
+            res+=pass+"\n";
+    }
+    if(res==""){
+        window.alert("Nothing generated.");
+        return;
+    }
+    let file = new Blob([res], {"text/plain": "text/plain"});
+    arq.href = URL.createObjectURL(file);
+    arq.download = "passwords.txt";
+    arq.click();
 }
