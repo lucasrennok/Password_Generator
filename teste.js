@@ -28,10 +28,13 @@ function moreClicked(){
 function generateClicked(){
     let id = list_of_pass.length-1;
     let element = document.getElementById(id.toString());
-    let password = create_password();
-    if(password==""){
-        window.alert("Config is wrong.")
-        return;
+    let password = "■";
+    while(password=="■"){
+        password = create_password();
+        if(password==""){
+            window.alert("Config is wrong.")
+            return;
+        }
     }
     element.innerHTML = "<il id=\""+id+"\">"+password+"</il>";
     list_of_pass[id] = password;
@@ -63,23 +66,101 @@ function create_password(){
     let quant = parseInt(document.getElementById("quantity").value,10);
     console.log(quant)
     let acceptable_inputs = "";
+    let correctlow = false;
+    let correctup = false;
+    let correctn = false;
+    let correctsym = false;
+    let aux=0;
     const low = "abcdefghijklmnopqrstuvwxyz";
     const up = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const n = "0123456789";
     const sym = "\'\"!@#$%&*()_-=+\\|{}[]:;.,<>/?";
-    if(document.getElementById("lowercase").checked)
+    if(document.getElementById("lowercase").checked){
         acceptable_inputs+=low;
-    if(document.getElementById("uppercase").checked)
+        aux++;
+    }
+    if(document.getElementById("uppercase").checked){
         acceptable_inputs+=up;
-    if(document.getElementById("numbers").checked)
+        aux++;
+    }
+    if(document.getElementById("numbers").checked){
         acceptable_inputs+=n;
-    if(document.getElementById("symbols").checked)
+        aux++;
+    }
+    if(document.getElementById("symbols").checked){
         acceptable_inputs+=sym;
-    let password = ""
+        aux++;
+    }
+    if(aux<=4 && quant<aux && document.getElementById("all_selected").checked){
+        return ""
+    }
+    let password = "";
     for(let i=0; i<quant; i++){
         password+=acceptable_inputs.charAt(Math.floor(Math.random()*acceptable_inputs.length));
     }
-    let all_the_ones = document.getElementById("all_selected").checked;
     console.log(password);
-    return password;
+    if(document.getElementById("all_selected").checked){
+        if(document.getElementById("lowercase").checked){
+            for(let j of low){
+                for(let y of password){
+                    if(j==y){
+                        correctlow = true;
+                        break;
+                    }
+                }
+                if(correctlow==true)
+                    break;
+            }
+        }else
+            correctlow = true;
+        if(document.getElementById("uppercase").checked){
+            for(let j of up){
+                for(let y of password){
+                    if(j==y){
+                        correctup = true;
+                        break;
+                    }
+                }
+                if(correctup==true)
+                    break;
+            }
+        }else
+            correctup = true;
+        if(document.getElementById("numbers").checked){
+            for(let j of n){
+                for(let y of password){
+                    if(j==y){
+                        correctn = true;
+                        break;
+                    }
+                }
+                if(correctn==true)
+                    break;
+            }
+        }else
+            correctn = true;
+        if(document.getElementById("symbols").checked){
+            for(let j of sym){
+                for(let y of password){
+                    if(j==y){
+                        correctsym = true;
+                        break;
+                    }
+                }
+                if(correctsym==true)
+                    break;
+            }
+        }else
+            correctsym = true;
+    }else{
+        correctlow = true;
+        correctup = true;
+        correctn = true;
+        correctsym = true;
+    }
+    if(correctlow && correctn && correctup && correctsym){
+        return password;
+    }else{
+        return "■";
+    }
 }
