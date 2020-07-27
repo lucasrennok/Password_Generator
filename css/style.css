@@ -18,6 +18,9 @@ h1{
     margin: auto;
     padding: 1%;
 }
+.key{
+    width: 2%;
+}
 #left-buttons{
     float: left;
     height: 40%;
@@ -70,7 +73,7 @@ il{
 }
 button{
     background-color:rgba(128, 128, 128);
-    padding: 1%;
+    padding: 0%;
     margin: 1%;
     color: rgb(238, 194, 0);
     border-color:rgba(0, 0, 0, 0);
@@ -99,9 +102,8 @@ button:focus{
 }
 .all{
     float:left;
-    margin: 2.5%;
+    margin: 2%;
     margin-left: 1%;
-    margin-bottom: 0px;
 }
 footer{
     border-radius: 10px;
