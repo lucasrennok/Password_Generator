@@ -112,3 +112,15 @@ footer{
     height: 50%;
     width: 35%;
 }
+.img_git{
+    width: 5%;
+}
+a{
+    text-decoration: none;
+    color: gray;
+    transition-duration: 1s;
+}
+a:hover{
+    transition-duration: 1s;
+    color: black;
+}
