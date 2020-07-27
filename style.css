@@ -48,6 +48,7 @@ h1{
     border-radius: 5px;
     display: none; /*hidden|button config with listener*/
 }
+
 #list{
     margin: auto;
     height: 50%;
