@@ -28,8 +28,7 @@ function moreClicked(){
 function generateClicked(){
     let id = list_of_pass.length-1;
     let element = document.getElementById(id.toString());
-    let password = list_of_pass.length.toString();
-    /* GERAR ALEATORIAMENTE A SENHA PELOS PARAMETROS DO CONFIG */
+    let password = create_password();
     element.innerHTML = "<il id=\""+id+"\">"+password+"</il>";
     list_of_pass[id] = password;
 }
@@ -54,4 +53,11 @@ function deleteClicked(){
 }
 function downloadClicked(){
     console.log(list_of_pass);
+}
+
+function create_password(){
+  
+    let password = ""
+
+    return list_of_pass.length.toString();
 }
