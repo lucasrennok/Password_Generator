@@ -105,3 +105,8 @@ footer{
     background-color: gainsboro;
     color: gray;
 }
+#foot{
+    margin: auto;
+    height: 50%;
+    width: 35%;
+}
