@@ -21,7 +21,6 @@ h1{
     float: left;
     height: 40%;
     width: 33.33%;
-    display: inline-block;
     background-color: gainsboro;
 }
 #center-buttons{
@@ -34,7 +33,6 @@ h1{
     float: right;
     height: 40%;
     width: 33.33%;
-    display: inline-block;
     background-color: gainsboro;
 }
 

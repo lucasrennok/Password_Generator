@@ -38,6 +38,7 @@ function generateClicked(){
     }
     element.innerHTML = "<il id=\""+id+"\">"+password+"</il>";
     list_of_pass[id] = password;
+    console.log(list_of_pass);
 }
 function deleteClicked(){
     if(document.getElementById("all_checkbox").checked){
@@ -64,7 +65,6 @@ function downloadClicked(){
 
 function create_password(){
     let quant = parseInt(document.getElementById("quantity").value,10);
-    console.log(quant)
     let acceptable_inputs = "";
     let correctlow = false;
     let correctup = false;
@@ -98,7 +98,6 @@ function create_password(){
     for(let i=0; i<quant; i++){
         password+=acceptable_inputs.charAt(Math.floor(Math.random()*acceptable_inputs.length));
     }
-    console.log(password);
     if(document.getElementById("all_selected").checked){
         if(document.getElementById("lowercase").checked){
             for(let j of low){
