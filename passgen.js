@@ -55,6 +55,7 @@ function deleteClicked(){
         list_of_pass = [""];
     }else{
         let element = document.getElementById(id.toString());
+        element.style.display = "none";
         element.innerHTML =  "";
         list_of_pass.pop();
     }
