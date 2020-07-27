@@ -29,6 +29,10 @@ function generateClicked(){
     let id = list_of_pass.length-1;
     let element = document.getElementById(id.toString());
     let password = create_password();
+    if(password==""){
+        window.alert("Config is wrong.")
+        return;
+    }
     element.innerHTML = "<il id=\""+id+"\">"+password+"</il>";
     list_of_pass[id] = password;
 }
@@ -56,8 +60,26 @@ function downloadClicked(){
 }
 
 function create_password(){
-  
+    let quant = parseInt(document.getElementById("quantity").value,10);
+    console.log(quant)
+    let acceptable_inputs = "";
+    const low = "abcdefghijklmnopqrstuvwxyz";
+    const up = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const n = "0123456789";
+    const sym = "\'\"!@#$%&*()_-=+\\|{}[]:;.,<>/?";
+    if(document.getElementById("lowercase").checked)
+        acceptable_inputs+=low;
+    if(document.getElementById("uppercase").checked)
+        acceptable_inputs+=up;
+    if(document.getElementById("numbers").checked)
+        acceptable_inputs+=n;
+    if(document.getElementById("symbols").checked)
+        acceptable_inputs+=sym;
     let password = ""
-
-    return list_of_pass.length.toString();
+    for(let i=0; i<quant; i++){
+        password+=acceptable_inputs.charAt(Math.floor(Math.random()*acceptable_inputs.length));
+    }
+    let all_the_ones = document.getElementById("all_selected").checked;
+    console.log(password);
+    return password;
 }
