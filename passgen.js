@@ -35,6 +35,12 @@ function generateClicked(){
             window.alert("Config is wrong.")
             return;
         }
+        for(let pass of list_of_pass){
+            if(pass==password){
+                password="■";
+                break;
+            }
+        }
     }
     element.innerHTML = "<il id=\""+id+"\">"+password+"</il>";
     list_of_pass[id] = password;
