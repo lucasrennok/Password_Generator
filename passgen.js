@@ -22,6 +22,8 @@ function configClicked(){
 function moreClicked(){
     let element = document.getElementById("list_pass");
     let new_id = list_of_pass.length;
+    if(list_of_pass[new_id-1]=="")
+        return;
     element.innerHTML = "<il id=\""+new_id+"\">Press Generate</il>"+element.innerHTML;
     list_of_pass[new_id]="";
 }
@@ -32,14 +34,14 @@ function generateClicked(){
     while(password=="■"){
         password = create_password();
         if(password==""){
-            window.alert("Config is wrong.")
+            window.alert("Config is wrong.");
             return;
         }
-        for(let pass of list_of_pass){
-            if(pass==password){
-                password="■";
-                break;
-            }
+    }
+    for(let pass of list_of_pass){
+        if(pass==password){
+            element.innerHTML = "<il id=\""+id+"\">SamePass Generate Again</il>";
+            return;
         }
     }
     element.innerHTML = "<il id=\""+id+"\">"+password+"</il>";
@@ -48,7 +50,6 @@ function generateClicked(){
 }
 function deleteClicked(){
     if(document.getElementById("all_checkbox").checked){
-        //clean all
         let element = document.getElementById("list_pass");
         element.innerHTML = "<il id=\"0\">Press Generate</il>";
         list_of_pass = [""];
