@@ -44,7 +44,7 @@ h1{
     height: 35%;
     background-color: rgba(199, 199, 199, 0.4);
     border-radius: 5px;
-    display: none; /*hidden|button config with listener*/
+    display: none;
 }
 
 #list{
@@ -59,6 +59,10 @@ ul{
 }
 il{
     display: block;
+    background-color: rgb(0, 0, 0, 0.1);
+    padding: 1%;
+    margin: 1%;
+    border-radius: 12px;
 }
 #quantity{
     width: 20%;
