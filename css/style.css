@@ -1,0 +1,127 @@
+html{
+    background-color: grey;
+    text-align: center;
+    color: rgb(85, 85, 85);
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: whitesmoke;
+    margin: 0.5%;
+    padding: 0.5%;
+    width: 98%;
+    height: 98%;
+    border-radius: 10px;
+}
+h1{
+    background-color: grey;
+    color: whitesmoke;
+    margin: auto;
+    padding: 1%;
+}
+#left-buttons{
+    float: left;
+    height: 40%;
+    width: 33.33%;
+    background-color: gainsboro;
+}
+#center-buttons{
+    height: 40%;
+    width: 33.33%;
+    display: inline-block;
+    background-color: gainsboro;
+}
+#right-buttons{
+    float: right;
+    height: 40%;
+    width: 33.33%;
+    background-color: gainsboro;
+}
+
+#config_menu{
+    float:left;
+    text-align: left;
+    padding: 1.5%;
+    width: 29%;
+    height: 35%;
+    background-color: rgba(199, 199, 199, 0.4);
+    border-radius: 5px;
+    display: none;
+}
+
+#list{
+    margin: auto;
+    height: 50%;
+    width: 35%;
+    background-color: #f1f1f1;
+}
+ul{
+    padding: 1%;
+    margin: 0%;
+}
+il{
+    display: block;
+    background-color: rgb(0, 0, 0, 0.1);
+    padding: 1%;
+    margin: 1%;
+    border-radius: 12px;
+}
+#quantity{
+    width: 20%;
+}
+button{
+    background-color:gainsboro;
+    padding: 1%;
+    margin: 1%;
+    color: rgb(85, 85, 85);
+    border-color:rgba(0,0,0,0);
+    border-radius: 5%;
+    transition-duration: 0.5s;
+}
+button:hover{
+    border-color: rgba(0,0,0,0.4);
+    background-color:whitesmoke;
+    transition-duration: 0.5s;
+}
+button:focus{
+    transition-duration: 0.5s;
+    border-color: gray;
+    background-color: whitesmoke;
+}
+#config{
+    float: left;
+}
+#download{
+    float: right;
+}
+#delete{
+    float:right;
+}
+.all{
+    float:left;
+    margin: 2.5%;
+    margin-left: 1%;
+    margin-bottom: 0px;
+}
+footer{
+    border-radius: 10px;
+    padding: 1%;
+    background-color: gainsboro;
+    color: gray;
+}
+#foot{
+    margin: auto;
+    height: 50%;
+    width: 35%;
+}
+.img_git{
+    width: 5%;
+}
+a{
+    text-decoration: none;
+    color: gray;
+    transition-duration: 1s;
+}
+a:hover{
+    transition-duration: 1s;
+    color: black;
+}
