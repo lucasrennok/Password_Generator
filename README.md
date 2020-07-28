@@ -1,8 +1,9 @@
 # Password Generator
 
-![Password Generator](/imgs/key_r.png)
+![Password Generator](/imgs/key_r.png =100x100)
 
 > Lucas Rennó Kallás | [Git: lucasrennok](https://github.com/lucasrennok "lucasrennok")
+
 > Rafael Antunes Vieita | [Git: Rav98](https://github.com/Rav98 "Rav98")
 
 ## About the Site
