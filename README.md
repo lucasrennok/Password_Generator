@@ -1,6 +1,6 @@
 # Password Generator
 
-![Password Generator](./imgs/key_r.png =250x)
+![Password Generator](./imgs/key_r.png)
 
 > Lucas Rennó Kallás | [Git: lucasrennok](https://github.com/lucasrennok "lucasrennok")
 
