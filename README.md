@@ -1,6 +1,6 @@
 # Password Generator
 
-![Password Generator](/imgs/key_r.png =100x100)
+![Password Generator](./imgs/key_r.png =250x)
 
 > lucasrennok | [Git: lucasrennok](https://github.com/lucasrennok "lucasrennok")
 
