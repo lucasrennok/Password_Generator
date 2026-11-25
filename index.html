@@ -1,79 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerador de senhas aleatórias no navegador, com RNG criptográfico.">
+    <meta name="color-scheme" content="dark light">
     <title>Password Generator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <!-- Using normalize -->
-    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
-    <!-- Our own style -->
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="icon" href="./imgs/key.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div id="menu">
-        <div id="title-name">
-            <h1>
-                <img src="./imgs/key.png" class="key"></img>
-                PASSWORD GENERATOR
-                <img src="./imgs/key.png" class="key"></img>
-            </h1>
-        </div>
-        <div id="left-buttons">
-            <button id="config">
-                Config
-            </button>
-        </div>
-        <div id="center-buttons">
-            <button id="more">
-                +
-            </button>
-            <button id="generate">
-                GENERATE
-            </button>
-            <button id="delete">
-                Delete
-            </button>
-        </div>
-        <div id="right-buttons">
-            <input type="checkbox" class="all" id="all_checkbox"></input><label class="all">All</label>
-            <a href="" id="download_t" download></a>
-            <button id="download">
-                Download
-            </button>
-        </div>
-    </div>
-    <div id="after_divs">
-        <div id="config_menu">
-            <label>Quantity</label>
-            <input id="quantity" type="number" value=6></br>
-            <input type="checkbox" id="lowercase" checked>
-            <label>abc</label></br>
-            <input type="checkbox" id="uppercase">
-            <label>ABC</label></br>
-            <input type="checkbox" id="numbers">
-            <label>123</label></br>
-            <input type="checkbox" id="symbols">
-            <label>#$%</label></br>
-            <input type="checkbox" id="all_selected">
-            <label>All selected</label></br>
-        </div>
-        <div id="list">
-            <ul>
-                <output id="list_pass">
-                    <il id="0">Press Generate</il>
-                </output>
-            </ul>
-        </div>
-    </div>
+    <main class="app">
+        <header class="app-header">
+            <h1><img src="./imgs/key.png" class="key" alt=""> Password Generator</h1>
+            <p class="subtitle">Senhas aleatórias geradas no seu navegador — nada é enviado para nenhum servidor.</p>
+        </header>
+
+        <section class="generator">
+            <div class="output">
+                <output id="current" class="current" aria-live="polite">Clique em Gerar</output>
+                <button id="copy" class="icon-btn" type="button" title="Copiar" aria-label="Copiar senha">⧉</button>
+            </div>
+
+            <div class="strength" aria-hidden="true">
+                <div class="strength-bar"><span id="strength-fill"></span></div>
+                <span id="strength-label" class="strength-label"></span>
+            </div>
+
+            <div class="controls">
+                <label class="length">
+                    Tamanho: <strong id="length-value">16</strong>
+                    <input type="range" id="length" min="4" max="64" value="16">
+                </label>
+
+                <fieldset class="charsets">
+                    <legend>Caracteres</legend>
+                    <label><input type="checkbox" id="lowercase" checked> abc</label>
+                    <label><input type="checkbox" id="uppercase" checked> ABC</label>
+                    <label><input type="checkbox" id="numbers" checked> 123</label>
+                    <label><input type="checkbox" id="symbols"> #$%</label>
+                    <label title="Garante pelo menos um de cada tipo marcado">
+                        <input type="checkbox" id="require_each" checked> Pelo menos um de cada
+                    </label>
+                    <label title="Evita i, l, 1, O, 0 etc.">
+                        <input type="checkbox" id="avoid_ambiguous"> Evitar ambíguos
+                    </label>
+                </fieldset>
+            </div>
+
+            <button id="generate" class="primary" type="button">Gerar</button>
+        </section>
+
+        <section class="history">
+            <div class="history-head">
+                <h2>Histórico</h2>
+                <div class="history-actions">
+                    <button id="download" type="button" class="ghost">Baixar .txt</button>
+                    <button id="clear" type="button" class="ghost">Limpar</button>
+                </div>
+            </div>
+            <ul id="list" class="list" aria-live="polite"></ul>
+            <p id="empty" class="empty">Nenhuma senha gerada ainda.</p>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <a href="https://github.com/lucasrennok" target="_blank" rel="noopener noreferrer">lucasrennok</a>
+        <span>·</span>
+        <a href="https://github.com/Rav98" target="_blank" rel="noopener noreferrer">Rav98</a>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./js/passgen.js"></script>
 </body>
-<footer>
-    <div id="foot">
-        <a href="https://github.com/lucasrennok" target="_blank"><img src="./imgs/github.png" class="img_git"></img> lucasrennok</a> |
-        <a href="https://github.com/Rav98" target="_blank"><img src="./imgs/github.png" class="img_git"></img> Rav98</a>
-    </div>
-</footer>
-<script src="./js/passgen.js"></script>
+
 </html>

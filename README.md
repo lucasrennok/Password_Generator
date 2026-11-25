@@ -1,22 +1,44 @@
-# <img src="/imgs/key.png" width="50" height="50"> Password Generator
+# <img src="./imgs/key.png" width="40" height="40"> Password Generator
 
-> lucasrennok | [Git: lucasrennok](https://github.com/lucasrennok "lucasrennok")
+Gerador de senhas aleatórias que roda inteiro no navegador — nenhuma senha é
+enviada para servidor nenhum.
 
-> Rafael Antunes Vieita | [Git: Rav98](https://github.com/Rav98 "Rav98")
+> [lucasrennok](https://github.com/lucasrennok) · [Rav98](https://github.com/Rav98)
 
-<img src="/imgs/key_r.png" width="200" height="200">
+![preview](./imgs/preview.png)
 
-## :gem: About the Site
-This project is a web site that create a password for you, based on the configuration that you put in the "Config" button. You have only to click on "Generate" to create a password at the first position of the list. If you want one more password you have to click at "+" button, the it will add one more place at the list to generate. Everytime you press "Generate" the first position of the list is replaced with a new password. The same as the "Delete" button, you will delete the first place of the list, so it will delete the password too and the list will be atualized. If the checkbox near to the "Delete" button is checked, all the passwords from the list will be removed if the you press "Delete". The button "Download" create an archive "passwords.txt" with all the passwords that you generated.
+## :gem: Sobre
 
-![executing generator](/imgs/executing.gif)
+Projeto antigo (2020), reescrito depois. A geração agora usa
+`crypto.getRandomValues` (gerador criptograficamente seguro) em vez de
+`Math.random`, que não é adequado para senhas.
 
-### :computer: Configuration
-Config button is to select the caracters that you want on your password.
+## :sparkles: Funcionalidades
 
-* Quantity: the length of the password that you want to generate(have to be a number bigger than 0).
-* abc: if you want lowercase caracters from the alphabet in your password(not necessarily obligated to be in the created word).
-* ABC: if you want uppercase caracters from the alphabet in your password(not necessarily obligated to be in the created word).
-* 123: if you want numbers in your passwords(not necessarily obligated to be in the created word).
-* #$%: if you want special caracters in your password(not necessarily obligated to be in the created word).
-* All selected: if you want that all the above checkboxes that were checked obligate the caracters to appear in the password.
+- Tamanho ajustável (4 a 64 caracteres)
+- Escolha dos tipos de caractere: minúsculas, maiúsculas, números e símbolos
+- **Pelo menos um de cada**: garante um caractere de cada tipo marcado
+- **Evitar ambíguos**: remove caracteres fáceis de confundir (`i l 1 L o 0 O` etc.)
+- Medidor de força com estimativa de entropia (em bits)
+- Copiar com um clique, histórico da sessão e download em `.txt`
+- Interface responsiva com tema escuro, sem dependências nem build
+
+## :rocket: Como usar
+
+Abra o `index.html` no navegador, ou publique com GitHub Pages
+(Settings → Pages → branch `main`).
+
+## :computer: Opções
+
+| Opção | O que faz |
+| --- | --- |
+| Tamanho | Comprimento da senha |
+| abc / ABC / 123 / #$% | Tipos de caractere incluídos |
+| Pelo menos um de cada | Obriga ao menos um caractere de cada tipo marcado |
+| Evitar ambíguos | Tira caracteres que se confundem visualmente |
+
+## :warning: Observação sobre segurança
+
+A geração usa um CSPRNG e acontece localmente. Ainda assim, para suas senhas
+do dia a dia, o ideal é usar um gerenciador de senhas, que também as armazena
+com segurança.
